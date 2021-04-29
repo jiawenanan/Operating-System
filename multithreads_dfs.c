@@ -273,8 +273,6 @@ void* dfs(void* arguments){
       tMax = m * n;
       freeMatrix(passings->visit, m, n);
       pthread_mutex_unlock(&mutex_on_dfs);
-      printf("i am t max %d\n", tMax);
-      printf("jdhfgkjsagdfuhjgsadkjhf %d\n", tMax);
       int * tx = calloc( 1, sizeof( int ) );
       *tx += tMax;
       pthread_exit(tx);
