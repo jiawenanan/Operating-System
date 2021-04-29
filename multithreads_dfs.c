@@ -6,7 +6,7 @@
 #include <ctype.h>
 #include <string.h>
 
-//gettid  clone
+//gettid  clone 
 int x[] = {-2, -2, -1, 1, 2, 2, 1, -1};
 int y[] = {-1, 1, 2, 2, 1, -1, -2, -2};
 int deadEndCount = 0;
@@ -196,7 +196,7 @@ int simulate( int argc, char * argv[] ){
     printf("MAIN: All threads joined; best solution(s) visited 1 square out of %d\n", area);
     if(x == 1){
       printf("MAIN: Dead end board covering at least 1 square is:\n");
-    }else{
+    }else{ 
       printf("MAIN: Dead end board covering at least %d squares is:\n", x);
     }
     printBoard(visit, m, n);
@@ -239,10 +239,10 @@ void* calldfs(void* arguments){
 void* dfs(void* arguments){
   struct passTodfs* passings = arguments;
   char** visit;
-  int row;
+  int row; 
   int col;
   int sum;
-  int ID;
+  int ID; 
   int m;
   int n;
   int x;
@@ -255,7 +255,7 @@ void* dfs(void* arguments){
   ID = passings->ID;
   m = passings->sizem;
   n = passings->sizen;
-  x = passings->threshold;
+  x = passings->threshold; 
   parent = passings->parent;
   tMax = passings-> threadMax;
   int** storage = hasNway(visit, row, col, m, n);
@@ -395,7 +395,7 @@ void printBoard(char** visit, int m, int n){
         currLine[0] = ' ';
         currLine[1] = ' ';
         currLine[n + 2] = '<';
-        currLine[n + 3] = '<';
+        currLine[n + 3] = '<'; 
         for(int k = 0; k < n; k++){
         currLine[k + 2] = visit[j][k];
       }
@@ -463,13 +463,3 @@ void freeMatrix(char** matrix, int m, int n){
     }
     free(matrix);
 }
-
-// void freeBoard(char*** board, int count, int m, int n){
-//     int num = 0;
-//     while(num < count){
-//       freeMatrix(board[num], m, n);
-//       num++;
-//     }
-//     free(board);
-// }
-
